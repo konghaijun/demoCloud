@@ -75,6 +75,7 @@ SpringBlade
 * [SpringBlade开发手册一览](https://gitee.com/smallc/SpringBlade/wikis/SpringBlade开发手册)
 * [SpringBlade常见问题集锦](https://sns.bladex.vip/article-14966.html)
 * [SpringBlade基于Kuboard部署K8S](https://kuboard.cn/learning/k8s-practice/spring-blade/)
+* [SpringBlade基于Rainbond部署](https://www.rainbond.com/docs/micro-service/example/blade)
 
 ## 项目地址
 * 核心框架项目地址：[https://gitee.com/smallc/blade-tool](https://gitee.com/smallc/blade-tool)
