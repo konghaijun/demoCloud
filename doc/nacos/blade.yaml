@@ -42,6 +42,10 @@ management:
     health:
       show-details: always
 
+#springdoc-openapi配置
+springdoc:
+  default-flat-param-object: true
+
 #knife4j配置
 knife4j:
   #启用
