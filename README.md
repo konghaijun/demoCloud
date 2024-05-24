@@ -103,6 +103,11 @@ SpringBlade
 | 后端Github地址    | [https://github.com/chillzhuang/SpringBlade](https://github.com/chillzhuang/SpringBlade)           |
 | 后端SpringBoot版 | [https://gitee.com/smallc/SpringBlade/tree/boot/](https://gitee.com/smallc/SpringBlade/tree/boot/) |
 
+## 安全手册
+| 简介        | 地址                                                                                                 |
+|-----------|----------------------------------------------------------------------------------------------------|
+| Blade安全手册 | [https://www.kancloud.cn/smallchill/blade-safety](https://www.kancloud.cn/smallchill/blade-safety) |
+
 ## 技术文档
 
 | 简介                        | 地址                                                                                                                       |
