@@ -54,11 +54,11 @@ public class AuthController {
 
 	@PostMapping("token")
 	@Operation(summary = "获取认证token", description = "传入租户ID:tenantId,账号:account,密码:password")
-	public R<AuthInfo> token(@Parameter(name = "授权类型", required = true) @RequestParam(defaultValue = "password", required = false) String grantType,
-							 @Parameter(name = "刷新令牌") @RequestParam(required = false) String refreshToken,
-							 @Parameter(name = "租户ID", required = true) @RequestParam(defaultValue = "000000", required = false) String tenantId,
-							 @Parameter(name = "账号") @RequestParam(required = false) String account,
-							 @Parameter(name = "密码") @RequestParam(required = false) String password) {
+	public R<AuthInfo> token(@Parameter(description = "授权类型", required = true) @RequestParam(defaultValue = "password", required = false) String grantType,
+							 @Parameter(description = "刷新令牌") @RequestParam(required = false) String refreshToken,
+							 @Parameter(description = "租户ID", required = true) @RequestParam(defaultValue = "000000", required = false) String tenantId,
+							 @Parameter(description = "账号") @RequestParam(required = false) String account,
+							 @Parameter(description = "密码") @RequestParam(required = false) String password) {
 
 		String userType = Func.toStr(WebUtil.getRequest().getHeader(TokenUtil.USER_TYPE_HEADER_KEY), TokenUtil.DEFAULT_USER_TYPE);
 
