@@ -16,9 +16,9 @@
 package org.springblade.auth.controller;
 
 import com.wf.captcha.SpecCaptcha;
-import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springblade.auth.granter.ITokenGranter;
 import org.springblade.auth.granter.TokenGranterBuilder;
@@ -90,6 +90,13 @@ public class AuthController {
 		redisUtil.set(CacheNames.CAPTCHA_KEY + key, verCode, 30L, TimeUnit.MINUTES);
 		// 将key和base64返回给前端
 		return R.data(Kv.init().set("key", key).set("image", specCaptcha.toBase64()));
+	}
+
+	@PostMapping("/logout")
+	@Operation(summary = "登出")
+	public R<Kv> logout() {
+		// 登出预留逻辑
+		return R.data(Kv.init().set("code", "200").set("msg", "操作成功"));
 	}
 
 }
