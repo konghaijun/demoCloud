@@ -33,8 +33,8 @@
 |----------------------|------------|
 | Java                 | 17+        |
 | NodeJS               | 18+        |
-| Spring               | 6.1.11     |
-| Spring Boot          | 3.2.8      |
+| Spring               | 6.1.12     |
+| Spring Boot          | 3.2.9      |
 | Spring Cloud         | 2023.0.3   |
 | Spring Cloud Alibaba | 2023.0.1.0 |
 | Nacos Alibaba        | 2.3.2      |
