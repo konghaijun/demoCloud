@@ -21,6 +21,7 @@
         <module>blade-log</module>
         <module>blade-system</module>
         <module>blade-demo</module>
+        <module>test-demo</module>
     </modules>
 
     <dependencies>

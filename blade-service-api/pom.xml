@@ -22,6 +22,7 @@
         <module>blade-user-api</module>
         <module>blade-scope-api</module>
         <module>blade-demo-api</module>
+        <module>test-demo-api</module>
     </modules>
 
     <dependencies>

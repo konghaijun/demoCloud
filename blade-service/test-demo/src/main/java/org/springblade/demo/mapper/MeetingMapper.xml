@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.springblade.demo.mapper.MeetingMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="meetingResultMap" type="org.springblade.demo.entity.Meeting">
+        <result column="id" property="id"/>
+        <result column="create_user" property="createUser"/>
+        <result column="create_dept" property="createDept"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_user" property="updateUser"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="status" property="status"/>
+        <result column="is_deleted" property="isDeleted"/>
+        <result column="tenant_id" property="tenantId"/>
+        <result column="title" property="title"/>
+        <result column="attach" property="attach"/>
+        <result column="mstart_time" property="mstartTime"/>
+        <result column="med_time" property="medTime"/>
+        <result column="maddress" property="maddress"/>
+        <result column="contacter" property="contacter"/>
+        <result column="contact_way" property="contactWay"/>
+        <result column="remark" property="remark"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="baseColumnList">
+        select id,
+               create_user as createUser,
+               create_dept as createDept,
+               create_time as createTime,
+               update_user as updateUser,
+               update_time as updateTime,
+               status,
+               is_deleted as isDeleted,
+               tenant_id as tenantId,
+               title,
+               attach,
+               mstart_time as mstartTime,
+               med_time as medTime,
+               maddress,
+               contacter,
+               contact_way as contactWay,
+               remark
+    </sql>
+
+    <!-- 查询所有会议 -->
+    <select id="selectAllMeetings" resultMap="meetingResultMap">
+        select * from sps_partyactivity_meeting where is_deleted = 0
+    </select>
+
+
+
+    <!-- 新增会议 -->
+    <insert id="insertMeeting" parameterType="org.springblade.demo.entity.Meeting">
+        insert into sps_partyactivity_meeting (
+            id,
+            create_user,
+            create_dept,
+            create_time,
+            update_user,
+            update_time,
+            status,
+            is_deleted,
+            tenant_id,
+            title,
+            attach,
+            mstart_time,
+            med_time,
+            maddress,
+            contacter,
+            contact_way,
+            remark
+        ) values (#{id},
+                     #{createUser},
+                     #{createDept},
+                     #{createTime},
+                     #{updateUser},
+                     #{updateTime},
+                     #{status},
+                     #{isDeleted},
+                     #{tenantId},
+                     #{title},
+                     #{attach},
+                     #{mstartTime},
+                     #{medTime},
+                     #{maddress},
+                     #{contacter},
+                     #{contactWay},
+                     #{remark}
+                 )
+    </insert>
+
+    <!-- 更新会议 -->
+    <update id="updateMeeting" parameterType="org.springblade.demo.entity.Meeting">
+        update sps_partyactivity_meeting set
+                                             create_user = #{createUser},
+                                             create_dept = #{createDept},
+                                             create_time = #{createTime},
+                                             update_user = #{updateUser},
+                                             update_time = #{updateTime},
+                                             status = #{status},
+                                             is_deleted = #{isDeleted},
+                                             tenant_id = #{tenantId},
+                                             title = #{title},
+                                             attach = #{attach},
+                                             mstart_time = #{mstartTime},
+                                             med_time = #{medTime},
+                                             maddress = #{maddress},
+                                             contacter = #{contacter},
+                                             contact_way = #{contactWay},
+                                             remark = #{remark}
+        where id = #{id}
+    </update>
+
+    <!-- 删除会议 -->
+    <update id="deleteMeeting" parameterType="long">
+        update sps_partyactivity_meeting set is_deleted = 1 where id = #{id}
+    </update>
+
+
+
+</mapper>
